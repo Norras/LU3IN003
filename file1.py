@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 
 c_del:int=2
