@@ -80,5 +80,5 @@ for i in tab_instance:
         print("Performance de DIST_2 en moins de 1 minutes atteint")
         break
 
-plt.plot(temps_CPU,len_x)
+plt.plot(len_x,temps_CPU)
 plt.show()

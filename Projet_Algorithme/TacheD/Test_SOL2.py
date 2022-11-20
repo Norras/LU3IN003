@@ -1,10 +1,12 @@
 import time
 import matplotlib.pyplot as plt
 
-from PROG_DYN import PROG_DYN
+from SOL_2 import SOL_2
+from GetTab_Dist1 import Tab_DIST_1
 
 #Test
 
+"""
 ## Traitement du fichier Inst_0000010_44.adn ##
 file=open("../Instances_genome/Inst_0000010_44.adn")
 modx:int=int(file.readline())
@@ -15,14 +17,11 @@ file.close()
 x=x[:-1]
 y=y[:-1]
 
+x = "".join(x)
+y = "".join(y)
 print("Mot x :%s"%(x))
 print("Mot y :%s"%(y))
-
-old_time = time.time()
-print("Distance d'edition: %d, alignement optimal de (x,y): ( %s )"%(PROG_DYN(x,y)))
-curr_time = time.time()
-print(curr_time-old_time)
-
+print("Un alignement de (x,y): ( %s , %s )"%(SOL_2(x,y)))
 print("----------------------")
 
 ## Traitement du fichier Inst_0000010_7.adn ##
@@ -35,14 +34,11 @@ file.close()
 x=x[:-1]
 y=y[:-1]
 
+x = "".join(x)
+y = "".join(y)
 print("Mot x :%s"%(x))
 print("Mot y :%s"%(y))
-
-old_time = time.time()
-print("Distance d'edition: %d, alignement optimal de (x,y): ( %s )"%(PROG_DYN(x,y)))
-curr_time = time.time()
-print(curr_time-old_time)
-
+print("Un alignement de (x,y): ( %s , %s )"%(SOL_2(x,y)))
 print("----------------------")
 
 ## Traitement du fichier Inst_0000010_8.adn ##
@@ -55,14 +51,41 @@ file.close()
 x=x[:-1]
 y=y[:-1]
 
+x = "".join(x)
+y = "".join(y)
+print("Mot x :%s"%(x))
+print("Mot y :%s"%(y))
+print("Un alignement de (x,y): ( %s , %s )"%(SOL_2(x,y)))
+print("----------------------")
+"""
+
+#Exemple
+x ="AGTACGCA"
+y ="TATGC"
+
 print("Mot x :%s"%(x))
 print("Mot y :%s"%(y))
 
-old_time = time.time()
-print("Distance d'edition: %d, alignement optimal de (x,y): ( %s )"%(PROG_DYN(x,y)))
-curr_time = time.time()
-print(curr_time-old_time)
+dist = Tab_DIST_1(x,y)
+print("Distance d'édition")
+for i in dist:
+    print("" + str(i))
 
+print("Un alignement de (x,y): ( %s, %s )"%(SOL_2(x,y)))
+print("----------------------")
+
+x ="GG"
+y ="GA"
+
+print("Mot x :%s"%(x))
+print("Mot y :%s"%(y))
+
+dist = Tab_DIST_1(x,y)
+print("Distance d'édition")
+for i in dist:
+    print("" + str(i))
+
+print("Un alignement de (x,y): ( %s, %s )"%(SOL_2(x,y)))
 print("----------------------")
 
 print("-----------------------------PERFORMANCE--------------------------------")
@@ -82,20 +105,22 @@ for i in tab_instance:
     x=x[:-1]
     y=y[:-1]
 
+    x = "".join(x)
+    y = "".join(y)
     print("Mot x :%s"%(x))
     print("Longueur x :%d"%len(x))
     print("Mot y :%s"%(y))
     print("Longueur y :%d"%len(y))
 
     old_time = time.time()
-    print("Distance d'edition: %d, alignement optimal de (x,y): ( %s )"%(PROG_DYN(x,y)))
+    print("Un alignement de (x,y): ( %s, %s )"%(SOL_2(x,y)))   
     print("Temps CPU en seconde = %d"%(time.time()-old_time))
     temps_CPU.append(time.time()-old_time)
     len_x.append(len(x))
     print("----------------------")
 
-    if((time.time()-old_time) >= 60):
-        print("Performance de PROG_DYN en moins de 1 minutes atteint")
+    if((time.time()-old_time) >= 60 ):
+        print("Performance de SOL_2 en moins de 1 minutes atteint")
         break
 
 plt.plot(len_x,temps_CPU)

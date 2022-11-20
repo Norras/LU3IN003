@@ -5,15 +5,17 @@ c_sub_conc:int=3
 
 def DIST_2(x:list[str],y:list[str])->int:
     tab = []
+    #INITIALISATION 
     for i in range(2):
         line = []
         for j in range(len(y)+1):
             line.append(0)
         tab.append(line)
 
+    #INITIALISATION 1ERE LIGNE DU TABLEAU
     for j in range(len(y)+1):
         tab[0][j] = j*c_ins
-
+        
     for i in range(1,len(x)+1):
         tab[1][0] = i*c_del
         for j in range(1, len(y)+1):

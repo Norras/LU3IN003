@@ -1,6 +1,11 @@
 from operator import index
 from typing import Tuple
 
+from GetTab_Dist1 import Tab_DIST_1
+from SOL_1 import SOL_1
+
+"""
+//Un alignement parmi d'autres
 def align_lettre_mot(x:list[str],y:list[str])->Tuple[list[str],list[str]]:
     u:list[str]=[]
     v:list[str]=[]
@@ -55,4 +60,7 @@ def align_lettre_mot(x:list[str],y:list[str])->Tuple[list[str],list[str]]:
                 v+=y[i]
 
     return (u,v)
+"""
 
+def align_lettre_mot(x:list[str],y:list[str])->Tuple[list[str],list[str]]:
+    return SOL_1(x,y,Tab_DIST_1(x,y))
