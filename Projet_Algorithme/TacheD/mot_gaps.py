@@ -1,5 +1,5 @@
 
-def mot_gaps(k:int)->list[str]:
+def mot_gaps(k):
     s = ''
     for i in range(k):
         s = s+"-"
