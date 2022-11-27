@@ -66,9 +66,14 @@ for i in tab_instance:
     len_x.append(len(x))
     print("----------------------")
 
-    if((time.time()-old_time) >= 60 ):
+    if((time.time()-old_time) >= 200 ):
         print("Performance de SOL_2 en moins de 1 minutes atteint")
         break
 
-plt.plot(len_x,temps_CPU)
+plt.plot(len_x,temps_CPU,".-",label="SOL_2")
+plt.xlabel("Longueur du mot x")
+plt.ylabel("Temps CPU en secondes")
+plt.title("Performance de SOL_2")
+plt.xlim(0,200)
+plt.ylim(0,20000)
 plt.show()
