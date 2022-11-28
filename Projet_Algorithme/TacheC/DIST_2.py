@@ -12,12 +12,12 @@ def DIST_2(x:list[str],y:list[str])->int:
             line.append(0)
         tab.append(line)
 
-    #INITIALISATION 1ERE LIGNE DU TABLEAU
+    #INITIALISATION 1ERE LIGNE DU TABLEAU, CAD D(0,j)
     for j in range(len(y)+1):
         tab[0][j] = j*c_ins
         
     for i in range(1,len(x)+1):
-        tab[1][0] = i*c_del
+        tab[1][0] = i*c_del #CAS D(i,0)
         for j in range(1, len(y)+1):
             deletion = tab[0][j]+c_del
             insertion = tab[1][j-1]+c_ins

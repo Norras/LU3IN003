@@ -47,7 +47,7 @@ print("Mot y :%s"%(y))
 print("Distance d'édition : %d"%(DIST_1(x,y)))
 print("----------------------")
 
-#Exemple
+#Question 30
 
 x = "ATTCGAGTCTTACGTAATTGC"
 y = "CG"
@@ -99,6 +99,7 @@ for i in tab_instance:
     print("Mot y :%s"%(y))
     print("Longueur y :%d"%len(y))
 
+    #CALCUL DU TEMPS CPU
     old_time = time.time()
     print("Distance d'edition: %d"%(DIST_1(x,y)))    
     print("Temps CPU en seconde = %d"%(time.time()-old_time))
@@ -110,6 +111,7 @@ for i in tab_instance:
         print("Performance de DIST_1 en moins de 1 minutes atteint")
         break
 
+#AFFICHAGE DE LA COURBE
 plt.plot(len_x,temps_CPU,".-",label="DIST_1")
 plt.xlabel("Longueur du mot x")
 plt.ylabel("Temps CPU en secondes")

@@ -2,7 +2,7 @@ from Coupure import coupure
 from GetTab_Dist1 import Tab_DIST_1
 from SOL_1 import SOL_1
 
-# Tests
+# Tests avec quelques instances
 """
 ## Traitement du fichier Inst_0000010_44.adn ##
 file=open("../Instances_genome/Inst_0000010_44.adn")
@@ -67,6 +67,7 @@ print("Un alignement de (x,y): ( %s , %s )"%(SOL_1(x,y,Tab_DIST_1(x,y))))
 print("Coupure (x,y) : %d"%(coupure(x,y)))
 print("----------------------")
 """
+
 #Exemple
 x ="ATTGTA"
 y ="ATCTTA"

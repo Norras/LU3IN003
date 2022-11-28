@@ -5,13 +5,16 @@ c_sub:int=4
 c_sub_conc:int=3
 
 def Tab_DIST_1(x:list[str],y:list[str])->int:
-    tab = []
+    tab = [] #tableau des distances d'édition
+
+    #initialisation de tab
     for i in range(len(x)+1):
         line = []
         for j in range(len(y)+1):
             line.append(0)
         tab.append(line)
 
+    #cas D(0,j) et D(i,0)
     for i in range(len(x)+1):
         tab[i][0] = i*c_del
     for j in range(len(y)+1):

@@ -8,11 +8,12 @@ c_sub:int=4
 c_sub_conc:int=3
 
 def SOL_1(x:list[str],y:list[str],t:list[int])->Tuple[list[str],list[str]]:
-    u:list[str]=[]
+    u:list[str]=[] 
     v:list[str]=[]
     index1 = len(x)
     index2 = len(y)
 
+    #parcours des index du tablau t, de valeur D(i,j) à D(0,0)
     while(index1 > 0 or index2 > 0):
         dist = t[index1][index2]
         deletion = t[index1-1][index2]
@@ -32,10 +33,10 @@ def SOL_1(x:list[str],y:list[str],t:list[int])->Tuple[list[str],list[str]]:
             v+=y[index2-1]
             index1 = index1-1
             index2 = index2-1
-
+    
     u_x = ''
     v_y = ''
-
+    #inverse l'ordre des lettres de l'alignement
     for i in u:
         u_x = i + u_x
     for j in v:
